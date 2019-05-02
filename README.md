@@ -1,4 +1,4 @@
-#Interfaz para caluclo de bono sobre nomina
+Interfaz para caluclo de bono sobre nomina
 
 Esta interfaz contara con las funcionalidades necesarias para que el usuario puede consultar su bono correspondiente de existir uno. 
 
