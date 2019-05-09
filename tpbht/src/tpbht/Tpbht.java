@@ -41,14 +41,16 @@ public class Tpbht {
 
     }while(!esValido);
     
-    String bono = CalcularBono(fechaIngreso,sueldoActual, area);
-    System.out.println(bono);
-   // Imprimir(bono, numEmpleado, fechaIngreso,sueldoActual, area);
+    Double bono = CalcularBono(fechaIngreso,sueldoActual,area);
+    bono = bono*Double.parseDouble(sueldoActual);
+    
+    String bonoStr=Double.toString(bono);
+    Imprimir(bonoStr, numEmpleado, fechaIngreso,sueldoActual, area);
 
     }
     
     
-  public static String CalcularBono(String fechaIngreso, String sueldo, String area){
+  public static Double CalcularBono(String fechaIngreso, String sueldo, String area){
     double multiplicador = 1.0;
 
     if(Integer.parseInt(fechaIngreso)>2017){
@@ -71,8 +73,29 @@ public class Tpbht {
         multiplicador+=0.25;
         break;   
     }
-
-    return Double.toString(multiplicador);
+    return multiplicador;
 
   }
+  
+   public static void Imprimir(String bono, String numEmpleado,String fechaIngreso, String sueldo, String area){
+       String nombreArea="";
+       switch(area.toLowerCase()) {
+      case "a":
+        nombreArea="Finanzas";
+        break;
+      case "b":
+        nombreArea="Ventas";
+        break;
+      case "c":
+        nombreArea="Atencion a clientes";
+        break;
+      case "d":
+        nombreArea="Otros";
+        break;   
+    }
+       System.out.println("--------------------------------------------\n"
+               + "Numero de empleado: "+numEmpleado+"\nAño de ingreso: " + fechaIngreso+"\nSueldo Actual: $"+sueldo+"\nArea: "+nombreArea+"\nUsted cuenta con un bono de: $"+bono);
+       
+  
+   }
 }
