@@ -17,8 +17,8 @@ public class Tpbht {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
-        System.out.println("Introduce tu numero de empleado:");
+        
+    System.out.println("Introduce tu numero de empleado:");
     String numEmpleado = in.nextLine();
     
     System.out.println("Introduce tu año de ingreso a la empresa (por ejemplo: 2018):");
